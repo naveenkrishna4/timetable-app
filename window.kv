@@ -1,0 +1,546 @@
+WindowManager :
+    Main:
+    Subjects:
+    Monday:
+    Tuesday:
+    Wednesday:
+    Thursday:
+    Friday:
+    Saturday:
+    
+<Button>
+    font_size: 20
+    background_color: (0,1,1,1)
+    outline_color:(0,0,0,1)
+    outline_width: 2
+    
+<Label>
+    font_size: 20
+    
+<Main>:
+    name:"main"
+    FloatLayout:
+        orientation:"vertical"
+        size:root.width,root.height
+        padding: 50
+        spacing:20
+        Label:
+            text:"TIME TABLE MANAGER"
+            pos_hint:{"x":0.35,"top":0.9}
+            size_hint:(0.3,0.2)
+            font_size:36
+            color:(1,0,0,1)
+            bold: True
+            outline_width:3
+            outline_color:(1,1,0)  
+        Image:
+            source: 'image.png'
+            allow_stretch: True
+            keep_ratio: True
+            pos_hint:{"x":0.25,"top":0.7}
+            size_hint:(0.5,0.4)
+            
+        Button:
+            text:"Time Table"
+            pos_hint: {"x":0.1,"y":0.1}
+            size_hint:(0.2,0.1)
+            on_release:
+            	app.root.current="mon"
+            	root.manager.transition.direction="up"
+        Button:
+            text:"Subjects"
+            pos_hint: {"x":0.4,"y":0.1}
+            size_hint:(0.2,0.1)
+            on_release:
+            	app.root.current="sub"
+            	root.manager.transition.direction="up"
+        Button:
+            text:"Exit"
+            pos_hint: {"x":0.7,"y":0.1}
+            size_hint:(0.2,0.1)
+            on_release: app.close_()
+    
+<Subjects>:
+    name:"sub"
+    GridLayout:
+        cols:2
+        size:root.width,root.height
+        padding: 50
+        spacing:10
+        Label:
+            text:"Subject"
+            outline_color:(0,0,0,1)
+            outline_width: 3
+            bold: True
+            font_size :26
+            background_color:(0,0,1,1)
+            canvas.before:
+            	Color:
+            	    rgba: self.background_color
+            	Rectangle:
+            	    size : self.size 
+            	    pos : self.pos	    
+        Label:
+            text:"Number of periods"
+            font_size :26
+            outline_color:(0,0,0,1)
+            outline_width: 3
+            bold: True
+            background_color:(0,0,1,1)
+            canvas.before:
+            	Color:
+            	    rgba: self.background_color
+            	Rectangle:
+            	    size : self.size 
+            	    pos : self.pos
+        Label:
+            text:"English"
+        Label:
+            text:"4"
+        Label:
+            text:"Tamil"
+        Label:
+            text:"4"
+        Label:
+            text:"Maths"
+        Label:
+            text:"6"
+        Label:
+            text:"Science"
+        Label:
+            text:"5"
+        Label:
+            text:"Social Science"
+        Label:
+            text:"5"
+        Button:
+            text: "Main"
+            on_release:
+            	app.root.current="main"
+            	root.manager.transition.direction="down"
+        Label:
+            text:"Total = 24"
+    
+<Monday>:
+    name:"mon"
+    GridLayout:
+        cols:2
+        size:root.width,root.height
+        padding: 50
+        spacing:10
+        Label:
+            text:"Day"
+            bold: True
+            font_size :26
+            outline_color:(0,0,0,1)
+            outline_width: 3
+            background_color:(0,0,1,1)
+            canvas.before:
+            	Color:
+            	    rgba: self.background_color
+            	Rectangle:
+            	    size : self.size 
+            	    pos : self.pos
+        Label:
+            text:"Monday"
+            outline_color:(0,0,0,1)
+            outline_width: 3
+            font_size :26
+            bold: True
+            background_color:(0,0,1,1)
+            canvas.before:
+            	Color:
+            	    rgba: self.background_color
+            	Rectangle:
+            	    size : self.size 
+            	    pos : self.pos
+        Label:
+            text:"Time"
+            color:(1,0,1,1)
+            bold: True
+            font_size :24
+        Label:
+            text:"Subject"
+            color:(1,0,1,1)
+            bold: True
+            font_size :24
+        Label:
+            text:"9.00 AM"
+        Label:
+            text:"Maths"
+        Label:
+            text:"10.00 AM"
+        Label:
+            text:"Social science"
+        Label:
+            text:"11.00 AM"
+        Label:
+            text:"Tamil"
+        Label:
+            text:"12.00 PM"
+        Label:
+            text:"Science"
+        Button:
+            text: "Main"
+            on_release:
+            	app.root.current="main"
+            	root.manager.transition.direction="down"
+        Button:
+            text: "Next"
+            on_release:
+            	app.root.current="tue"
+            	root.manager.transition.direction="left"
+    
+<Tuesday>:
+    name:"tue"
+    GridLayout:
+        cols:2
+        size:root.width,root.height
+        padding: 50
+        spacing:10
+        Label:
+            text:"Day"
+            outline_color:(0,0,0,1)
+            outline_width: 3
+            bold: True
+            font_size :26
+            background_color:(0,0,1,1)
+            canvas.before:
+            	Color:
+            	    rgba: self.background_color
+            	Rectangle:
+            	    size : self.size 
+            	    pos : self.pos
+        Label:
+            text:"Tuesday"
+            bold: True
+            outline_color:(0,0,0,1)
+            outline_width: 3
+            font_size :26
+            background_color:(0,0,1,1)
+            canvas.before:
+            	Color:
+            	    rgba: self.background_color
+            	Rectangle:
+            	    size : self.size 
+            	    pos : self.pos
+        Label:
+            text:"Time"
+            outline_color:(0,0,0,1)
+            outline_width: 3
+            color:(1,0,1,1)
+            bold: True
+            font_size :24
+        Label:
+            text:"Subject"
+            color:(1,0,1,1)
+            bold: True
+            font_size :24
+        Label:
+            text:"9.00 AM"
+        Label:
+            text:"Science"
+        Label:
+            text:"10.00 AM"
+        Label:
+            text:"Social science"
+        Label:
+            text:"11.00 AM"
+        Label:
+            text:"English"
+        Label:
+            text:"12.00 PM"
+        Label:
+            text:"Maths"
+        Button:
+            text: "Previous"
+            on_release: 
+            	app.root.current="mon"
+            	root.manager.transition.direction="right"
+        Button:
+            text: "Next"
+            on_release: 
+            	app.root.current="wed"
+            	root.manager.transition.direction="left"
+        
+<Wednesday>:
+    name:"wed"
+    GridLayout:
+        cols : 2
+        size: root.width,root.height
+        padding: 50
+        spacing:10
+        Label:
+            text:"Day"
+            outline_color:(0,0,0,1)
+            outline_width: 3
+            bold: True
+            font_size :26
+            background_color:(0,0,1,1)
+            canvas.before:
+            	Color:
+            	    rgba: self.background_color
+            	Rectangle:
+            	    size : self.size 
+            	    pos : self.pos
+        Label:
+            text:"Wednesday"
+            outline_color:(0,0,0,1)
+            outline_width: 3
+            bold: True
+            font_size :26
+            background_color:(0,0,1,1)
+            canvas.before:
+            	Color:
+            	    rgba: self.background_color
+            	Rectangle:
+            	    size : self.size 
+            	    pos : self.pos
+        Label:
+            text:"Time"
+            color:(1,0,1,1)
+            bold: True
+            font_size :24
+        Label:
+            text:"Subject"
+            color:(1,0,1,1)
+            bold: True
+            font_size :24
+        Label:
+            text:"9.00 AM"
+        Label:
+            text:"Social science"
+        Label:
+            text:"10.00 AM"
+        Label:
+            text:"English"
+        Label:
+            text:"11.00 AM"
+        Label:
+            text:"Maths"
+        Label:
+            text:"12.00 PM"
+        Label:
+            text:"Tamil"  
+        Button:
+            text: "Previous"
+            on_release: 
+            	app.root.current="tue"
+            	root.manager.transition.direction="right"
+        Button:
+            text: "Next"
+            on_release: 
+            	app.root.current="thu"
+            	root.manager.transition.direction="left"
+        
+<Thursday>:
+    name:"thu"
+    GridLayout:
+        cols:2
+        size: root.width,root.height
+        padding: 50
+        spacing:10
+        Label:
+            text:"Day"
+            outline_color:(0,0,0,1)
+            outline_width: 3
+            bold: True
+            font_size :26
+            background_color:(0,0,1,1)
+            canvas.before:
+            	Color:
+            	    rgba: self.background_color
+            	Rectangle:
+            	    size : self.size 
+            	    pos : self.pos
+        Label:
+            text:"Thursday"
+            outline_color:(0,0,0,1)
+            outline_width: 3
+            bold: True
+            font_size :26
+            background_color:(0,0,1,1)
+            canvas.before:
+            	Color:
+            	    rgba: self.background_color
+            	Rectangle:
+            	    size : self.size 
+            	    pos : self.pos
+        Label:
+            text:"Time"
+            color:(1,0,1,1)
+            bold: True
+            font_size :24
+        Label:
+            text:"Subject"
+            color:(1,0,1,1)
+            bold: True
+            font_size :24
+        Label:
+            text:"9.00 AM"
+        Label:
+            text:"Maths"
+        Label:
+            text:"10.00 AM"
+        Label:
+            text:"Tamil"
+        Label:
+            text:"11.00 AM"
+        Label:
+            text:"Social Science"
+        Label:
+            text:"12.00 PM"
+        Label:
+            text:"Science"
+        Button:
+            text: "Previous"
+            on_release: 
+            	app.root.current="wed"
+            	root.manager.transition.direction="right"
+        Button:
+            text: "Next"
+            on_release: 
+            	app.root.current="fri"
+            	root.manager.transition.direction="left"
+         
+<Friday>:
+    name:"fri"
+    GridLayout:
+        cols:2
+        size: root.width,root.height
+        padding: 50
+        spacing:10
+        Label:
+            text:"Day"
+            outline_color:(0,0,0,1)
+            outline_width: 3
+            bold: True
+            font_size :26
+            background_color:(0,0,1,1)
+            canvas.before:
+            	Color:
+            	    rgba: self.background_color
+            	Rectangle:
+            	    size : self.size 
+            	    pos : self.pos
+        Label:
+            text:"Friday"
+            bold: True
+            outline_color:(0,0,0,1)
+            outline_width: 3
+            font_size :26
+            background_color:(0,0,1,1)
+            canvas.before:
+            	Color:
+            	    rgba: self.background_color
+            	Rectangle:
+            	    size : self.size 
+            	    pos : self.pos
+        Label:
+            text:"Time"
+            color:(1,0,1,1)
+            bold: True
+            font_size :24
+        Label:
+            text:"Subject"
+            color:(1,0,1,1)
+            bold: True
+            font_size :24
+        Label:
+            text:"9.00 AM"
+        Label:
+            text:"Maths"
+        Label:
+            text:"10.00 AM"
+        Label:
+            text:"Tamil"
+        Label:
+            text:"11.00 AM"
+        Label:
+            text:"Science"
+        Label:
+            text:"12.00 PM"
+        Label:
+            text:"English"
+        Button:
+            text: "Previous"
+            on_release: 
+            	app.root.current="thu"
+            	root.manager.transition.direction="right"
+        Button:
+            text: "Next"
+            on_release: 
+            	app.root.current="sat"
+            	root.manager.transition.direction="left"
+    
+    
+<Saturday>:
+    name:"sat"
+    GridLayout:
+        cols:2
+        size: root.width,root.height
+        padding: 50
+        spacing:10
+        Label:
+            text:"Day"
+            outline_color:(0,0,0,1)
+            outline_width: 3
+            bold: True
+            font_size :26
+            background_color:(0,0,1,1)
+            canvas.before:
+            	Color:
+            	    rgba: self.background_color
+            	Rectangle:
+            	    size : self.size 
+            	    pos : self.pos
+        Label:
+            text:"Saturday"
+            outline_color:(0,0,0,1)
+            outline_width: 3
+            font_size :26
+            bold: True
+            background_color:(0,0,1,1)
+            canvas.before:
+            	Color:
+            	    rgba: self.background_color
+            	Rectangle:
+            	    size : self.size 
+            	    pos : self.pos
+        Label:
+            text:"Time"
+            color:(1,0,1,1)
+            bold: True
+            font_size :24
+        Label:
+            text:"Subject"
+            color:(1,0,1,1)
+            bold: True
+            font_size :24
+        Label:
+            text:"9.00 AM"
+        Label:
+            text:"Science"
+        Label:
+            text:"10.00 AM"
+        Label:
+            text:"Social science"
+        Label:
+            text:"11.00 AM"
+        Label:
+            text:"Maths"
+        Label:
+            text:"12.00 PM"
+        Label:
+            text:"English"
+        Button:
+            text: "Previous"
+            on_release: 
+            	app.root.current="fri"
+            	root.manager.transition.direction="right"
+        Button:
+            text: "Main"
+            on_release: 
+            	app.root.current="main"
+            	root.manager.transition.direction="left"
+    
